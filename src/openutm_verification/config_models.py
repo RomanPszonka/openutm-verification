@@ -44,6 +44,7 @@ class ReportingConfig(BaseModel):
     """Configuration for generating reports."""
 
     output_dir: str = "reports"
+    logs_dir:str = "logs"
     formats: List[str] = Field(default_factory=lambda: ["json", "html", "log"])
     deployment_details: DeploymentDetails = Field(default_factory=DeploymentDetails)
 
