@@ -32,7 +32,7 @@ def main():
     from datetime import datetime, timezone
 
     run_timestamp = datetime.now(timezone.utc)
-    base_filename = f"report_{run_timestamp.strftime('%Y-%m-%dT%H-%M-%SZ')}"
+    base_filename = f"log_{run_timestamp.strftime('%Y-%m-%dT%H-%M-%SZ')}"
     log_file = setup_logging(logs_dir, base_filename, config.reporting.formats, args.debug)
 
     # Run verification scenarios
