@@ -64,6 +64,11 @@ check_files() {
     fi
 }
 
+# create the reports and logs folder
+create_folders() {
+    mkdir -p reports logs
+}
+
 # Show usage information
 show_usage() {
     cat << EOF
@@ -192,6 +197,7 @@ main() {
     log_info "Starting OpenUTM Verification Tool..."
     check_dependencies
     check_files
+    create_folders
 
     # Set up cleanup trap
     trap 'run_cleanup' EXIT
