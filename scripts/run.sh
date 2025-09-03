@@ -66,7 +66,7 @@ check_files() {
 
 # create the reports and logs folder
 create_folders() {
-    for dir in reports logs; do
+    for dir in reports; do
         if [[ ! -d "$dir" ]]; then
             log_info "Directory '$dir' does not exist. Creating..."
             mkdir -p "$dir"
