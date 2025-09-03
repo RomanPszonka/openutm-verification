@@ -24,6 +24,7 @@ scenarios:
 # Reporting configuration
 reporting:
   output_dir: "reports"
+  logs_dir: "logs"
   formats: ["json", "html", "log"] # 'json' is raw, 'html' is summarized
   # A place to add metadata about the system under test
   deployment_details:

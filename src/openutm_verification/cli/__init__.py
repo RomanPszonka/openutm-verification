@@ -26,14 +26,14 @@ def main():
     config = AppConfig(**config_data)
 
     # Setup logging
-    output_dir = Path(config.reporting.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    logs_dir = Path(config.reporting.logs_dir)
+    logs_dir.mkdir(parents=True, exist_ok=True)
 
     from datetime import datetime, timezone
 
     run_timestamp = datetime.now(timezone.utc)
     base_filename = f"report_{run_timestamp.strftime('%Y-%m-%dT%H-%M-%SZ')}"
-    log_file = setup_logging(output_dir, base_filename, config.reporting.formats, args.debug)
+    log_file = setup_logging(logs_dir, base_filename, config.reporting.formats, args.debug)
 
     # Run verification scenarios
     run_verification_scenarios(config, args.config)

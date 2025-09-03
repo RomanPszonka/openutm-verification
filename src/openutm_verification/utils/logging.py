@@ -8,7 +8,7 @@ from pathlib import Path
 from loguru import logger
 
 
-def setup_logging(output_dir: Path, base_filename: str, formats: list, debug: bool = False):
+def setup_logging(logging_dir: Path, base_filename: str, formats: list, debug: bool = False):
     """
     Configures logging to write to the console and optionally to a file.
     Returns the path to the log file if created, otherwise None.
@@ -19,7 +19,7 @@ def setup_logging(output_dir: Path, base_filename: str, formats: list, debug: bo
     logger.remove()  # Remove default handler
 
     if "log" in formats:
-        log_file_path = output_dir / f"{base_filename}.log"
+        log_file_path = logging_dir / f"{base_filename}.log"
         logger.add(
             log_file_path,
             level="DEBUG",
